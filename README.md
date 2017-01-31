@@ -17,7 +17,9 @@ A Material Design checkbox item
 ```
 -->
 ```html
-<paper-checkbox-item>Checkbox example</paper-checkbox-item>
+<paper-checkbox-item>Item example</paper-checkbox-item>
+<paper-checkbox-item checked>Item checked</paper-checkbox-item>
+<paper-checkbox-item disabled>Item disabled</paper-checkbox-item>
 ```
 
 ## Install
