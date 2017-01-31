@@ -1,0 +1,27 @@
+{
+  "name": "paper-checkbox-item",
+  "version": "0.0.1",
+  "description": "A Material Design checkbox item",
+  "authors": [
+    "Abe90"
+  ],
+  "main": "paper-checkbox-item.html",
+  "license": "Apache-2.0",
+  "keywords": [
+    "checkbox",
+    "polymer",
+    "paper",
+    "material design"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0",
+    "paper-checkbox": "PolymerElements/paper-checkbox#^1.4.2",
+    "paper-ripple": "PolymerElements/paper-ripple#^1.0.10"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "web-component-tester": "^4.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  }
+}

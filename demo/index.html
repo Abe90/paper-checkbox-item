@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+		<title>paper-checkbox-item demo</title>
+
+		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+		<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+		<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+		<link rel="import" href="../paper-checkbox-item.html">
+
+		<style is="custom-style" include="demo-pages-shared-styles">
+			.vertical-section-container.large {
+				max-width: 600px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="vertical-section-container centered">
+			<h3>Basic paper-checkbox-item demo</h3>
+			<demo-snippet>
+				<template>
+					<paper-checkbox-item>Checkbox example</paper-checkbox-item>
+					<paper-checkbox-item checked>Checkbox checked</paper-checkbox-item>
+					<paper-checkbox-item disabled>Checkbox disabled</paper-checkbox-item>
+				</template>
+			</demo-snippet>
+		</div>
+		
+		<div class="vertical-section-container centered large">
+			<h3>Paper-checkbox-item styles demo</h3>
+			<demo-snippet>
+				<template>
+					<style is="custom-style">
+						paper-checkbox-item.red {
+							--paper-checkbox-checked-color: var(--paper-red-500);
+							--paper-checkbox-checked-ink-color: var(--paper-red-500);
+							--paper-checkbox-unchecked-color: var(--paper-red-900);
+							--paper-checkbox-unchecked-ink-color: var(--paper-red-900);
+							--paper-checkbox-label-color: var(--paper-red-500);
+						}
+
+						paper-checkbox-item.blue {
+							--paper-checkbox-checked-color: var(--paper-blue-500);
+							--paper-checkbox-checked-ink-color: var(--paper-blue-500);
+							--paper-checkbox-unchecked-color: var(--paper-blue-900);
+							--paper-checkbox-unchecked-ink-color: var(--paper-blue-900);
+							--paper-checkbox-label-color: var(--paper-blue-500);
+							--paper-checkbox-label-checked-color: var(--paper-blue-900);
+						}
+					</style>
+
+					<paper-checkbox-item class="red">Checkbox red</paper-checkbox-item>
+					<paper-checkbox-item class="blue">Checkbox blue</paper-checkbox-item>
+				</template>
+			</demo-snippet>
+		</div>
+	</body>
+</html>

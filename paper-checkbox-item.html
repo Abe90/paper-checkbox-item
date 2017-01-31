@@ -1,0 +1,125 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="import" href="../paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../paper-ripple/paper-ripple.html">
+
+<!--
+`paper-checkbox-item`
+A Material Design checkbox item
+
+@demo demo/index.html 
+-->
+
+<dom-module id="paper-checkbox-item">
+	<template>
+		<style>
+			:host {
+				display: block;
+				position: relative;
+				min-height: 48px;
+				padding: 0 16px;
+				cursor: pointer;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				-ms-flex-direction: row;
+				-webkit-flex-direction: row;
+				flex-direction: row;
+				-ms-flex-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+			}
+			
+			:host[disabled]{
+				cursor: default;
+			}
+			
+			#checkboxLabel {
+				font-size: 16px;
+				color: var(--paper-checkbox-label-color, var(--primary-text-color));
+				-ms-flex: 1 1 0.000000001px;
+				-webkit-flex: 1;
+				flex: 1;
+				-webkit-flex-basis: 0.000000001px;
+				flex-basis: 0.000000001px;
+			}
+
+			:host([disabled]) #checkboxLabel  {
+				opacity: 0.65;
+			}
+
+			paper-checkbox {
+				--paper-checkbox-label-spacing: 0;
+				--paper-checkbox-ink-size: 0;
+			}
+
+			#ink {
+				color: var(--paper-checkbox-unchecked-ink-color, var(--primary-text-color));
+			}
+		</style>
+		
+		<div id="checkboxLabel"><content></content></div>
+		
+		<paper-checkbox name="[[name]]" checked="[[checked]]" value="[[value]]" disabled="[[disabled]]"></paper-checkbox>
+		
+		<paper-ripple id="ink" noink="[[disabled]]"></paper-ripple>
+
+	</template>
+
+	<script>
+		Polymer({
+
+			is: 'paper-checkbox-item',
+
+			properties: {
+				/*
+				 * The name of this element.
+				 */
+				name: {
+					type: String,
+					reflectToAttribute: true,
+				},
+
+				/*
+				 * Gets or sets the state, true is checked and false is unchecked.
+				 */
+				checked: {
+					type: Boolean,
+					value: false,
+					reflectToAttribute: true,
+					notify: true,
+				},
+				
+				/*
+				 * Overriden from Polymer.IronFormElementBehavior
+				 */
+				value: {
+					type: String,
+					value: 'on',
+				},
+				
+				/*
+				 * If true, the user cannot interact with this element.
+				 */
+				disabled: {
+					type: Boolean,
+					value: false,
+					reflectToAttribute: true
+				},
+			},
+
+			listeners: {
+				'tap': '_regularTap',
+			},
+
+			_regularTap: function(e){
+				e.preventDefault();
+				e.stopPropagation();
+
+				if(!this.disabled)
+					this.checked = !this.checked;
+			},
+			
+		});
+	</script>
+</dom-module>
